@@ -11,5 +11,12 @@
         <a href="https://www.instagram.com/mateuszchmielarek" >Autor: Chmielarson</a>
         <h4>Tu bedzie cos dojebanego</h4>
     </div>
+        {% for post in posts %}
+    <div>
+        <p>Opublikowano: {{ post.published_date() }}</p>
+        <p>Autor: {{post.author() }}</p>
+    </div>
+    {% endfor %}
+
 </body>
 </html>
