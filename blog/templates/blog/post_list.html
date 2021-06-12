@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Pierwszy Blog</title>
-</head>
-<body>
-    <div>
-        <h1>Witaj na stronie...</h1>
-        <h2>To moja pierwsza strona DJANGO</h2>
-        <a href="https://www.instagram.com/mateuszchmielarek" >Autor: Chmielarson</a>
-        <h4>Tu bedzie cos dojebanego</h4>
-    </div>
+    {% extends 'blog/base.html' %}
+    {% block content %}
         {% for post in posts %}
-    <div>
-        <p>Opublikowano: {{ post.published_date }}</p>
-        <p>Autor: {{post.author }}</p>
-    </div>
-        {% endfor %}
+        <div class="post">
+            <p>Opublikowano: {{ post.published_date }}</p>
+            <h1><a href="http://www.instagram.com/mateuszchmielarek"> Autor: {{post.author }}</a></h1>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <h2>{{ post.text }}</h2>
+        </div>
+            {% endfor %}
+    {% endblock %}
 
-</body>
-</html>
