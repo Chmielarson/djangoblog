@@ -24,10 +24,9 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('image/', Image.as_view(), name='image'),
     path('image/<int:pk>/', ImageDisplay.as_view, name="image_display"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'blog.views.error_404_view'
 
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
