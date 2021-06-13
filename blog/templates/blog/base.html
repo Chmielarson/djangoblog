@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <title>Pierwszy Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <script src="https://use.fontawesome.com/451851369b.js"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<form enctype="multipart/form-data"></form>
 
 <body>
-<div class="page-header">
-    {% if user.is_authenticated %}
-    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-    {% endif %}
-    <h1><a href="/"> MÓJ PIERWSZY BLOG</a></h1>
-</div>
+<nav class="navbar navbar-light" style="background-color: #061A40;">
+    <a class="top-menu" href="/">Instagram</a>
+    <a class="top-menu" href="/">Twitter</a>
+    <a class="top-menu" href="/">Facebook</a>
+    <div class="plus">
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+    </div>
+</nav>
+    <div class="all">
+<nav class="navbar navbar-light bg-light">
+    <div class="page-header">
+        <img src="/media/images/Logo.png" height="5%">
+        <a class="nav-link" href="/"><b>Strona Główna</b></a>
+        <a class="nav-link" href="#"><b>Co już umiem?</b></a>
+        <a class="nav-link" href="#"><b>Napisz do mnie!</b></a>
+        <a class="nav-link" href="#"><b>Kontakt</b></a>
+        </div>
+    <div class="gora">
+    <p class="title"><b>Strona prezentacyjna</b></p>
+    <img class="baner" src="/media/images/baner.jpg"><br/><br/><br/>
+    </div>
+</nav>
+
+
 <div class="content container">
   <div class="row">
     <div class="col-md-8">
@@ -25,5 +46,52 @@
   </div>
 </div>
 
+<div class="stopka">
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <h6><b>O mnie</b></h6>
+                    <p class="text-justify"> Python/Django - junior. Still learning :)</p>
+                </div>
+
+                <div class="col-xs-6 col-md-2">
+                    <h6><b>Kategorie</b></h6>
+                    <ul class="footer-links">
+                        <li><a href="/">PYTHON/DJANGO</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-2">
+                    <h6><b>Na Szybko:</b></h6>
+                    <ul class="footer-links">
+                        <li><a href="/">O mnie</a></li>
+                        <li><a href="/">Współpraca</a></li>
+                        <li><a href="/">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright C 2021 All Rights Reserved by
+                        <a href="#"> MCH</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="instagram" href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    </div>>
 </body>
 </html>
